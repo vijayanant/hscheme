@@ -1,2 +1,2 @@
-# hscheme
+# HScheme
 Scheme In Haskell
