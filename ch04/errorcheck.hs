@@ -45,7 +45,7 @@ primitives = [
   ]
 
 numbericBinOp :: (Integer -> Integer -> Integer) -> [LispVal] -> ThrowsError LispVal
-{-numbericBinop op singleVal@[_] = throwError $ NumArgs 2 singleVal-}
+numbericBinOp op (x:[])= throwError $ NumArgs 2 [x]
 numbericBinOp op args   = mapM unpackNumber args >>= return . Number . foldl1 op
 
 unpackNumber :: LispVal -> ThrowsError Integer
